@@ -1,9 +1,15 @@
 
 import 'package:animate_do/animate_do.dart';
-import 'package:crypto_wallet_app/screen/coming_soon.dart';
+import 'package:crypto_wallet_app/screen/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:slide_to_act/slide_to_act.dart';
+
+////////////////////////////////////////
+///   @faiz.rhm on Instagram
+///
+///   https://github.com/Faiz-rhm
+///////////////////////////////////////
 
 class IntroPage extends StatelessWidget {
   const IntroPage({ Key? key }) : super(key: key);
@@ -50,7 +56,7 @@ class IntroPage extends StatelessWidget {
                         const Duration(seconds: 1),
                         () { Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const ComingSoon()),
+                            MaterialPageRoute(builder: (context) => const HomePage()),
                           );
                         },
                       );
