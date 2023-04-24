@@ -1,5 +1,3 @@
-
-
 import 'dart:convert';
 import 'dart:math';
 
@@ -54,102 +52,107 @@ class _StaticPageState extends State<StaticPage> {
         ),
         backgroundColor: Colors.black,
         title: const Text('Statics'),
-        actions: const [
-          Icon(IconlyBroken.more_circle)
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(IconlyBroken.more_circle))
         ],
         elevation: 0,
       ),
-      body: Container(
-        padding: const EdgeInsets.only(right:5, left:5, top: 16),
-        height: MediaQuery.of(context).size.height,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 100,
-                child: Image.asset('assets/images/eth.png'),
-              ),
-              const SizedBox(height: 15,),
-              const Text('Ethereum(ETH)', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),),
-              Text('\$2,920', style: TextStyle(color: Colors.grey[100], fontSize: 25, fontWeight: FontWeight.bold),),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(IconlyBold.arrow_up_2, size: 25, color: Colors.greenAccent,),
-                  Text('3.79%(+1.43%)', style: TextStyle(color: Colors.greenAccent, fontSize: 11),)
-                ],
-              ),
-              const SizedBox(height: 20,),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(20),
-                height: 300,
-                decoration: BoxDecoration(
-                  color: Colors.grey[900],
-                  borderRadius: const BorderRadius.all(Radius.circular(20))
-                ),
-                child: LineChart(
-                  LineChartData(
-                    borderData: FlBorderData(show: false),
-                    backgroundColor: Colors.grey[900],
-                    gridData: FlGridData(show: false),
-                    titlesData: titlesData1,
-                    minX: 0,
-                    maxX: 30,
-                    maxY: 25,
-                    minY: 0,
-                    lineBarsData: [
-                      LineChartBarData(
-                        preventCurveOvershootingThreshold: 0,
-                        preventCurveOverShooting: true,
-                        isStrokeCapRound: true,
-                        aboveBarData: BarAreaData(show: true, color: Colors.transparent),
-                        spots: dummyData3,
-                        isCurved: true,
-                        barWidth: 1,
-                        shadow: const Shadow(
-                          color: Colors.black,
-                          blurRadius: 4,
-                          offset: Offset(0, 5)
-                        ),
-                        dotData: FlDotData(
-                          show: false
-                        ),
-                        color: Colors.yellowAccent[700],
-                      ),
-                    ],
-                  ),
-                  swapAnimationDuration: const Duration(milliseconds: 500),
-                  swapAnimationCurve: Curves.easeInOut,
-                )
-              ),
-              const SizedBox(height: 20,),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Button.primaryButton(
-                    child: const Text('BUY', style: TextStyle(color: Colors.grey),),
-                    onPressed: (){}
-                  ),
-                  Button.secondaryButton(
-                    child: const Text('SELL', style: TextStyle(color: Colors.black),),
-                    onPressed: (){}
-                  ),
-                ],
-              ),
-            LiveList(
-              showItemInterval: const Duration(milliseconds: 500),
-              showItemDuration: const Duration(seconds: 1),
-              padding: const EdgeInsets.only(top: 16, bottom: 16),
-              physics: const BouncingScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: _currency.length,
-              itemBuilder: _buildAnimatedItem,
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 100,
+              child: Image.asset('assets/images/eth.png'),
             ),
+            const SizedBox(height: 15,),
+            const Text('Ethereum(ETH)', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),),
+            Text('\$2,920', style: TextStyle(color: Colors.grey[100], fontSize: 25, fontWeight: FontWeight.bold),),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(IconlyBold.arrow_up_2, size: 25, color: Colors.greenAccent,),
+                Text('3.79%(+1.43%)', style: TextStyle(color: Colors.greenAccent, fontSize: 11),)
+              ],
+            ),
+            const SizedBox(height: 20,),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(20),
+              height: 300,
+              decoration: BoxDecoration(
+                color: Colors.grey[900],
+                borderRadius: const BorderRadius.all(Radius.circular(20))
+              ),
+              child: LineChart(
+                LineChartData(
+                  borderData: FlBorderData(show: false),
+                  backgroundColor: Colors.grey[900],
+                  gridData: FlGridData(show: false),
+                  titlesData: titlesData1,
+                  minX: 0,
+                  maxX: 30,
+                  maxY: 25,
+                  minY: 0,
+                  lineBarsData: [
+                    LineChartBarData(
+                      preventCurveOvershootingThreshold: 0,
+                      preventCurveOverShooting: true,
+                      isStrokeCapRound: true,
+                      aboveBarData: BarAreaData(show: true, color: Colors.transparent),
+                      spots: dummyData3,
+                      isCurved: true,
+                      barWidth: 1,
+                      shadow: const Shadow(
+                        color: Colors.black,
+                        blurRadius: 4,
+                        offset: Offset(0, 5)
+                      ),
+                      dotData: FlDotData(
+                        show: false
+                      ),
+                      color: Colors.yellowAccent[700],
+                    ),
+                  ],
+                ),
+                swapAnimationDuration: const Duration(milliseconds: 500),
+                swapAnimationCurve: Curves.easeInOut,
+              )
+            ),
+            const SizedBox(height: 20,),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Button.primaryButton(
+                    child: const Text('BUY', style: TextStyle(color: Colors.grey),),
+                    onPressed: () {}
+                  ),
+                ),
+                const SizedBox(width: 16,),
+                Expanded(
+                  child: Button.secondaryButton(
+                    child: const Text('SELL', style: TextStyle(color: Colors.black),),
+                    onPressed: () {}
+                  ),
+                ),
+              ],
+            ),
+          LiveList(
+            showItemInterval: const Duration(milliseconds: 500),
+            showItemDuration: const Duration(seconds: 1),
+            padding: const EdgeInsets.only(top: 16, bottom: 16),
+            physics: const BouncingScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: _currency.length,
+            itemBuilder: _buildAnimatedItem,
+          ),
         ]),
-      ),
-    ));
+      )
+    );
   }
 
   Widget _buildAnimatedItem(BuildContext context, int index, Animation<double> animation,) =>

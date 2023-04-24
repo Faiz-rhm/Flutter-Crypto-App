@@ -1,5 +1,3 @@
-
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'Currencies.freezed.dart';
@@ -18,5 +16,4 @@ class Currencies with _$Currencies{
   }) = _Currencies;
 
   factory Currencies.fromJson(Map<String, dynamic> json) => _$CurrenciesFromJson(json);
-
 }

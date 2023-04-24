@@ -6,7 +6,6 @@ class Button {
       child: child,
       elevation: 0,
       height: 50,
-      minWidth: 200,
       color: Colors.black,
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 32),
       shape: RoundedRectangleBorder(
@@ -22,7 +21,6 @@ class Button {
       child: child,
       elevation: 0,
       height: 50,
-      minWidth: 200,
       color: Colors.yellowAccent[700],
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 32),
       shape: RoundedRectangleBorder(

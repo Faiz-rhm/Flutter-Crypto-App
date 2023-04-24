@@ -46,70 +46,67 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body:
-      SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.only(top:80, right: 10, left: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FadeInDownBig(child: const Center(child: Text('Current Wallet Ballance', style: TextStyle(color: Colors.grey, fontSize: 18),))),
-              const SizedBox(height: 5,),
-              FadeInDownBig(child: Center(child: Text('\$3,293.45', style: TextStyle(color:Colors.yellowAccent[700], fontSize: 45, fontWeight: FontWeight.bold, fontFamily: ''),))),
-              const SizedBox(height: 25,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FadeInLeft(child:_sendReceive(context, title: 'Send', icon: Icon(IconlyBroken.arrow_up, size: 30, color:Colors.grey[400]))),
-                  const SizedBox(width:20,),
-                  FadeInDown(child:_sendReceive(context, title: 'Receive', icon: Icon(IconlyBroken.arrow_down, size: 30, color:Colors.grey[400]))),
-                  const SizedBox(width:20,),
-                  FadeInUp(child:_sendReceive(context, title: 'Buy', icon: Icon(IconlyBroken.bag_2, size: 30, color:Colors.grey[400]))),
-                  const SizedBox(width:20,),
-                  FadeInRight(child:_sendReceive(context, title: 'Swap', icon: Icon(IconlyBroken.swap, size: 30, color:Colors.grey[400]))),
-                ],
-              ),
-              const SizedBox(height: 25,),
-              const Divider(height: 1, thickness: 0.5, color: Colors.grey,),
-              const SizedBox(height: 25,),
-              _viewAll(title: 'Portfolio'),
-              Row(
-                children: [
-                  Expanded(
-                    child: SizedBox(
-                      height: 220,
-                      child:
-                      LiveGrid(
-                         padding: const EdgeInsets.only(top: 16, left: 0, bottom: 16),
-                        showItemInterval: const Duration(milliseconds: 50),
-                        showItemDuration: const Duration(milliseconds: 150),
-                        visibleFraction: 0.001,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: _currency.length,
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 1,
-                          crossAxisSpacing: 0,
-                          mainAxisSpacing: 0,
-                        ),
-                        itemBuilder: _buildAnimatedItemGrid
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.only(top:80, right: 10, left: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            FadeInDownBig(child: const Center(child: Text('Current Wallet Ballance', style: TextStyle(color: Colors.grey, fontSize: 18),))),
+            const SizedBox(height: 5,),
+            FadeInDownBig(child: Center(child: Text('\$3,293.45', style: TextStyle(color:Colors.yellowAccent[700], fontSize: 45, fontWeight: FontWeight.bold, fontFamily: ''),))),
+            const SizedBox(height: 25,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FadeInLeft(child:_sendReceive(context, title: 'Send', icon: Icon(IconlyBroken.arrow_up, size: 30, color:Colors.grey[400]))),
+                const SizedBox(width:20,),
+                FadeInDown(child:_sendReceive(context, title: 'Receive', icon: Icon(IconlyBroken.arrow_down, size: 30, color:Colors.grey[400]))),
+                const SizedBox(width:20,),
+                FadeInUp(child:_sendReceive(context, title: 'Buy', icon: Icon(IconlyBroken.bag_2, size: 30, color:Colors.grey[400]))),
+                const SizedBox(width:20,),
+                FadeInRight(child:_sendReceive(context, title: 'Swap', icon: Icon(IconlyBroken.swap, size: 30, color:Colors.grey[400]))),
+              ],
+            ),
+            const SizedBox(height: 25,),
+            const Divider(height: 1, thickness: 0.5, color: Colors.grey,),
+            const SizedBox(height: 25,),
+            _viewAll(title: 'Portfolio'),
+            Row(
+              children: [
+                Expanded(
+                  child: SizedBox(
+                    height: 220,
+                    child:
+                    LiveGrid(
+                      padding: const EdgeInsets.only(top: 16, left: 0, bottom: 16),
+                      showItemInterval: const Duration(milliseconds: 50),
+                      showItemDuration: const Duration(milliseconds: 150),
+                      visibleFraction: 0.001,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: _currency.length,
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 1,
+                        crossAxisSpacing: 0,
+                        mainAxisSpacing: 0,
                       ),
+                      itemBuilder: _buildAnimatedItemGrid
                     ),
                   ),
-                ],
-              ),
-              const SizedBox(height: 5,),
-              _viewAll(title: 'Your Assets'),
-              LiveList(
-                showItemInterval: const Duration(milliseconds: 500),
-                showItemDuration: const Duration(seconds: 1),
-                padding: const EdgeInsets.only(top: 16, bottom: 16),
-                physics: const BouncingScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: _currency.length,
-                itemBuilder: _buildAnimatedItem,
-              ),
-            ],)
-          ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 5,),
+            _viewAll(title: 'Your Assets'),
+            LiveList(
+              showItemInterval: const Duration(milliseconds: 300),
+              showItemDuration: const Duration(seconds: 1),
+              padding: const EdgeInsets.only(top: 16, bottom: 16),
+              physics: const BouncingScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: _currency.length,
+              itemBuilder: _buildAnimatedItem,
+            ),
+          ],),
         ),
       bottomNavigationBar: const BottomNavigation()
     );
@@ -156,8 +153,7 @@ class _HomePageState extends State<HomePage> {
             logo:  _currency[index]['logo'],
             chart: 'chart',
             rise: '\$5,017',
-            percent: '3.75%',
-            ),
+            percent: '3.75%',),
           ),
       ),
   );
