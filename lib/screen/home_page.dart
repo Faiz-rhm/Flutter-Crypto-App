@@ -69,16 +69,16 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 25,),
             const Divider(height: 1, thickness: 0.5, color: Colors.grey,),
-            const SizedBox(height: 25,),
+            const SizedBox(height: 16,),
             _viewAll(title: 'Portfolio'),
             Row(
               children: [
                 Expanded(
                   child: SizedBox(
-                    height: 220,
+                    height: 200,
                     child:
                     LiveGrid(
-                      padding: const EdgeInsets.only(top: 16, left: 0, bottom: 16),
+                      padding: const EdgeInsets.only(top: 0, left: 0, bottom: 6),
                       showItemInterval: const Duration(milliseconds: 50),
                       showItemDuration: const Duration(milliseconds: 150),
                       visibleFraction: 0.001,
@@ -95,12 +95,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-            const SizedBox(height: 5,),
             _viewAll(title: 'Your Assets'),
             LiveList(
               showItemInterval: const Duration(milliseconds: 300),
               showItemDuration: const Duration(seconds: 1),
-              padding: const EdgeInsets.only(top: 16, bottom: 16),
+              padding: const EdgeInsets.only(top: 0, bottom: 16),
               physics: const BouncingScrollPhysics(),
               shrinkWrap: true,
               itemCount: _currency.length,
@@ -124,7 +123,7 @@ class _HomePageState extends State<HomePage> {
           end: Offset.zero,
         ).animate(animation),
         child: Padding(
-          padding: const EdgeInsets.all(5),
+          padding: const EdgeInsets.all(8),
           child: PortfolioCard(
             title: _currency[index]['name'],
             price: _currency[index]['price'],
@@ -163,7 +162,10 @@ class _HomePageState extends State<HomePage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(title, style: TextStyle(color: Colors.grey[300], fontSize: 18, fontWeight: FontWeight.bold),),
-        const Text('See all', style: TextStyle(color: Colors.grey),)
+        TextButton(
+          onPressed: () {},
+          child: const Text('See all', style: TextStyle(color: Colors.grey),)
+        )
       ],
     );
   }

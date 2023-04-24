@@ -80,7 +80,7 @@ class _StaticPageState extends State<StaticPage> {
             const SizedBox(height: 20,),
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(32),
               height: 300,
               decoration: BoxDecoration(
                 color: Colors.grey[900],

@@ -36,7 +36,7 @@ class IntroPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 70,),
-                FadeInLeft(child: Text('Create Your Cryptocurrency Wallet App', style: TextStyle(color:Colors.yellowAccent[700], fontSize: 45, fontWeight: FontWeight.bold, fontFamily: ''),)),
+                FadeInLeft(child: Text('Create Your Cryptocurrency Wallet App', style: TextStyle(color:Colors.yellowAccent[700], fontSize: 42, fontWeight: FontWeight.bold, fontFamily: ''),)),
                 const SizedBox(height: 20,),
                 FadeInLeft(child: const Text('Grow your portfolio by receiving rewards up to 15.5% on your crypto assets', style: TextStyle(color: Colors.grey, fontSize: 20),)),
                 const SizedBox(height: 100,),

@@ -20,7 +20,7 @@ class PortfolioCard extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width * 0.40,
         height: MediaQuery.of(context).size.width * 0.46,
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(vertical: 12),
         decoration: BoxDecoration(
           color: Colors.grey[900],
           borderRadius: const BorderRadius.all(Radius.circular(10)),
