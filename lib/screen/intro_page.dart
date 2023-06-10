@@ -48,15 +48,14 @@ class IntroPage extends StatelessWidget {
             left: 16,
             right: 16,
             child: Builder(builder: (context) {
-              final GlobalKey<SlideActionState> _key = GlobalKey();
+              final GlobalKey<SlideActionState> key = GlobalKey();
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SlideAction(
                   sliderRotate: false,
                   outerColor: Colors.grey[900],
                   innerColor: Colors.yellowAccent[700],
-                  child: FadeInRight(child: const Text('Swipe to get started', style: TextStyle(color: Colors.white, fontSize: 17),)),
-                  key: _key,
+                  key: key,
                   sliderButtonIcon: const Icon(IconlyBroken.arrow_right),
                   onSubmit: () {
                     Future.delayed(
@@ -68,6 +67,7 @@ class IntroPage extends StatelessWidget {
                       },
                     );
                   },
+                  child: FadeInRight(child: const Text('Swipe to get started', style: TextStyle(color: Colors.black, fontSize: 17),)),
                 ),
               );
             },),
