@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class Button {
   static Widget primaryButton({required Widget child, required VoidCallback onPressed}) {
     return MaterialButton(
-      child: child,
       elevation: 0,
       height: 50,
       color: Colors.black,
@@ -13,12 +12,12 @@ class Button {
         side:  const BorderSide(color: Colors.grey)
       ),
       onPressed: onPressed,
+      child: child,
     );
   }
 
   static Widget secondaryButton({required Widget child, required VoidCallback onPressed}) {
     return MaterialButton(
-      child: child,
       elevation: 0,
       height: 50,
       color: Colors.yellowAccent[700],
@@ -27,6 +26,7 @@ class Button {
         borderRadius: BorderRadius.circular(10),
       ),
       onPressed: onPressed,
+      child: child,
     );
   }
 }

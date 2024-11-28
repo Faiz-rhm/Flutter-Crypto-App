@@ -14,14 +14,14 @@ class AssetsCard extends StatelessWidget {
   final String percent;
 
   const AssetsCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.price,
     required this.logo,
     required this.chart,
     required this.rise,
     required this.percent
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -98,8 +98,8 @@ class AssetsCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  swapAnimationDuration: const Duration(milliseconds: 500),
-                  swapAnimationCurve: Curves.easeInOut,
+                  // swapAnimationDuration: const Duration(milliseconds: 500),
+                  // swapAnimationCurve: Curves.easeInOut,
                 )
 
               ),

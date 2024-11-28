@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:iconly/iconly.dart';
 
 class StaticPage extends StatefulWidget {
-  const StaticPage({ Key? key }) : super(key: key);
+  const StaticPage({ super.key });
 
   @override
   State<StaticPage> createState() => _StaticPageState();
@@ -70,9 +70,9 @@ class _StaticPageState extends State<StaticPage> {
             const SizedBox(height: 15,),
             const Text('Ethereum(ETH)', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),),
             Text('\$2,920', style: TextStyle(color: Colors.grey[100], fontSize: 25, fontWeight: FontWeight.bold),),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Icon(IconlyBold.arrow_up_2, size: 25, color: Colors.greenAccent,),
                 Text('3.79%(+1.43%)', style: TextStyle(color: Colors.greenAccent, fontSize: 11),)
               ],
@@ -117,8 +117,8 @@ class _StaticPageState extends State<StaticPage> {
                     ),
                   ],
                 ),
-                swapAnimationDuration: const Duration(milliseconds: 500),
-                swapAnimationCurve: Curves.easeInOut,
+                // swapAnimationDuration: const Duration(milliseconds: 500),
+                // swapAnimationCurve: Curves.easeInOut,
               )
             ),
             const SizedBox(height: 20,),
@@ -233,6 +233,6 @@ class _StaticPageState extends State<StaticPage> {
         break;
     }
 
-    return Padding(child: text, padding: const EdgeInsets.only(top: 10.0));
+    return Padding(padding: const EdgeInsets.only(top: 10.0), child: text);
   }
 }
