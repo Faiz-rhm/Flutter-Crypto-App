@@ -47,15 +47,15 @@ class _StaticPageState extends State<StaticPage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(IconlyBroken.arrow_left),
+          icon: const Icon(IconlyBroken.arrow_left, color: Colors.white54,),
           onPressed:(){Navigator.pop(context);}
         ),
         backgroundColor: Colors.black,
-        title: const Text('Statics'),
+        title: Text('Statics', style: TextStyle(color: Colors.white54),),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(IconlyBroken.more_circle))
+            icon: Icon(IconlyBroken.more_circle, color: Colors.white54,))
         ],
         elevation: 0,
       ),
